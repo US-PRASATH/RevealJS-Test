@@ -1,40 +1,97 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-		<title>reveal.js</title>
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+      <!-- Markdown Slide -->
+      <section data-markdown>
+        <textarea data-template>
+          ## 📊 Quarterly Earnings Report
+          **Prepared by:** Technical Consultant  
+          📧 23f1002057@ds.study.iitm.ac.in
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+          ---
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+          This report summarizes key financial metrics and highlights for stakeholders.
+        </textarea>
+      </section>
+
+      <!-- Animated Fragments -->
+      <section data-notes="Explain how each metric improved over last quarter.">
+        <h2>Highlights</h2>
+        <ul>
+          <li class="fragment">Revenue Growth: <b>+12%</b></li>
+          <li class="fragment">Net Profit: <b>+8%</b></li>
+          <li class="fragment">Customer Retention: <b>95%</b></li>
+        </ul>
+      </section>
+
+      <!-- Code Sample -->
+      <section data-notes="Walk through how we analyze raw financial data with Python.">
+        <h2>Data Analysis Example</h2>
+        <pre><code class="language-python">
+import pandas as pd
+
+# Load quarterly earnings
+df = pd.read_csv("earnings.csv")
+
+# Calculate growth
+growth = df["Q2"].sum() - df["Q1"].sum()
+print("Quarterly Growth:", growth)
+        </code></pre>
+      </section>
+
+      <!-- Math Formula -->
+      <section data-notes="Explain that NPV is used in investment decision-making.">
+        <h2>Financial Formula</h2>
+        <p>
+          \[
+            NPV = \sum_{t=0}^{n} \frac{C_t}{(1+r)^t}
+          \]
+        </p>
+        <p class="fragment">Where:</p>
+        <ul>
+          <li class="fragment">\(C_t\) = Cash flow at time \(t\)</li>
+          <li class="fragment">\(r\) = Discount rate</li>
+          <li class="fragment">\(n\) = Number of periods</li>
+        </ul>
+      </section>
+
+      <!-- Closing Slide -->
+      <section data-notes="Thank stakeholders and invite questions.">
+        <h2>Thank You!</h2>
+        <p>Contact: 23f1002057@ds.study.iitm.ac.in</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
+    });
+  </script>
+</body>
 </html>
